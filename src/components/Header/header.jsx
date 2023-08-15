@@ -4,7 +4,7 @@ import "./header.css";
 function Header() {
   return (
     <header>
-      <img src="./imagens/logo.png" alt="logo" />
+      <img src="./assets/imagens/logo.png" alt="" />
     </header>
   );
 }
