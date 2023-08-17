@@ -1,11 +1,17 @@
 import React from "react";
 import "./header.css";
-import logo from "../../assets/imagens/logo.png"
+import logo from "../../assets/imagens/logo.png";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <header>
-     <img src={logo} alt="logo" style={{width:"200px"}}/>
+      <Link to="/">
+        <img src={logo} alt="logo" className="logo" />
+      </Link>
+      <Link to="/favoritos" className="favoritos">
+        Favoritos
+      </Link>
     </header>
   );
 }
