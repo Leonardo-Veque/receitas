@@ -12,7 +12,7 @@ function RoutesApp() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/favoritos" element={<Favoritos />} />
-        <Route path="/detalhes" element={<Detalhes />} />
+        <Route path="/detalhes/:id" element={<Detalhes />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
