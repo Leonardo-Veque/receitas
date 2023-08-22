@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../services/api";
@@ -22,20 +23,38 @@ function Detalhes() {
     load();
   }, [navigate, id]);
 
-  if (loading) {
-    return (
-      <div>
-        <h1>Carregando receitas</h1>
-      </div>
+  function salvarReceitas() {
+    const lista = localStorage.getItem("idMeal");
+    if (lista == null) {
+      localStorage.setItem("idMeal", JSON.stringify([receita]));
+      return;
+    }
+    let receitaSalva = JSON.parse(lista);
+    const hasRe = receitaSalva.some(
+      (receitaSalva) => receitaSalva.idMeal == receita.idMeal
     );
+    console.log(hasRe);
+    if (hasRe) {
+      console.log("Essa receita já foi adicionada");
+      return;
+    }
+    receitaSalva.push(receita);
+    localStorage.setItem("idMeal", JSON.stringify(receitaSalva));
   }
 
   return (
     <div>
-      <div>{receita.strMeal}</div>
-      <h3>{receita.strInstructions}</h3>
+      <h2>{receita.strMeal}</h2>
+      <p>{receita.strInstructions}</p>
+      <button onClick={salvarReceitas}>Salvar</button>
       {ingredientes.map((_v, i) => (
-        <div key={`ingrediente_${i}`}>{receita[`strIngredient${i + 1}`]}</div>
+        <>
+          <div key={`ingrediente_${i}`}>
+            <p>
+              {receita[`strIngredient${i + 1}`]} {receita[`strMeasure${i + 1}`]}
+            </p>
+          </div>
+        </>
       ))}
     </div>
   );

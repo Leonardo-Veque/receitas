@@ -6,7 +6,6 @@ import axios from "axios";
 function Home() {
   const [receitas, setReceitas] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [ing, setIng] = useState([]);
 
   useEffect(() => {
     async function load() {
