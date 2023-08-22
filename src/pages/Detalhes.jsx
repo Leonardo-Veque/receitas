@@ -33,7 +33,7 @@ function Detalhes() {
   return (
     <div>
       <div>{receita.strMeal}</div>
-      <div>{receita.strInstructions}</div>
+      <h3>{receita.strInstructions}</h3>
       {ingredientes.map((_v, i) => (
         <div key={`ingrediente_${i}`}>{receita[`strIngredient${i + 1}`]}</div>
       ))}

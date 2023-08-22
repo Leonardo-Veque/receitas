@@ -12,6 +12,9 @@ function Header() {
       <Link to="/favoritos" className="favoritos">
         Favoritos
       </Link>
+      <Link to="/adicionar" className="favoritos">
+        Adicionar
+      </Link>
     </header>
   );
 }
