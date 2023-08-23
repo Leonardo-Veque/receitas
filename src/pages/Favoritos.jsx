@@ -16,7 +16,6 @@ function Favoritos() {
     });
     setReceitas(filtrar);
     localStorage.setItem("idMeal", JSON.stringify(filtrar));
-    console.log("Filme Removido");
   }
 
   return (

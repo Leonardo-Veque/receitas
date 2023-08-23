@@ -48,7 +48,6 @@ function Detalhes() {
       <h2>{receita.strMeal}</h2>
       <p>{receita.strInstructions}</p>
       <img src={receita.strMealThumb} alt="" />
-      <button onClick={salvarReceitas}>Salvar</button>
       {ingredientes.map((_v, i) => (
         <>
           <div key={`ingrediente_${i}`}>
@@ -58,6 +57,7 @@ function Detalhes() {
           </div>
         </>
       ))}
+      <button onClick={salvarReceitas}>Salvar</button>
     </div>
   );
 }

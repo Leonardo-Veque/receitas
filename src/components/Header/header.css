@@ -4,6 +4,7 @@ header{
     background-color: #896A67;
     display: flex;
     align-items: center;
+    flex-direction: row;
     justify-content: space-around;
 }
 
@@ -11,6 +12,8 @@ header{
     width: 180px;
     height: 175px;
     cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .favoritos{
@@ -21,6 +24,7 @@ header{
     border: 1px solid;
     border-color: #ffffff;
     border-radius: 8px;
+    
 }
 .favoritos:hover{
     opacity: 0.3;

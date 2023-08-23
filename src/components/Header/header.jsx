@@ -9,6 +9,9 @@ function Header() {
       <Link to="/">
         <img src={logo} alt="logo" className="logo" />
       </Link>
+      <Link to="/" className="favoritos">
+        Home
+      </Link>
       <Link to="/favoritos" className="favoritos">
         Favoritos
       </Link>

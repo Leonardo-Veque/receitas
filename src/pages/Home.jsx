@@ -6,6 +6,7 @@ import axios from "axios";
 function Home() {
   const [receitas, setReceitas] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [minhaRec, SetMinhaRec] = useState([]);
 
   useEffect(() => {
     async function load() {
@@ -20,6 +21,12 @@ function Home() {
     load();
   }, []);
 
+  useEffect(() => {
+    const listAdd = localStorage.getItem("receitaAdd");
+    SetMinhaRec(JSON.parse(listAdd) || []);
+    console.log(JSON.parse(listAdd) || []);
+  }, []);
+
   const pegarIng = () => (
     <div>
       {receitas.map((item) => (
@@ -30,6 +37,14 @@ function Home() {
           <Link className="link" to={`/detalhes/${item.idMeal}`}>
             Ver detalhes
           </Link>
+        </div>
+      ))}
+      {minhaRec.map((item) => (
+        <div className="receitas" key={item.id}>
+          <h2>Suas proprias receitas</h2>
+          <h2>{item.nome}</h2>
+          <p>{item.instrucoes}</p>
+          <ul>{item.ingrediente}</ul>
         </div>
       ))}
     </div>
