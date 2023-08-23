@@ -8,6 +8,7 @@ function Detalhes() {
   const ingredientes = new Array(20).fill(0);
   const { id } = useParams();
   const navigate = useNavigate();
+  const navigate2 = useNavigate();
 
   const [receita, setReceita] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,8 +18,10 @@ function Detalhes() {
       const response = await api.get(`/lookup.php?i=${id}`);
 
       const data = response.data;
-
-      setReceita(data);
+      if (data.meals == null) {
+        return navigate2("/");
+      }
+      setReceita(data.meals[0]);
       setLoading(false);
     }
     load();
