@@ -1,5 +1,6 @@
 import { useEffect, useState, useParams } from "react";
 import { Link } from "react-router-dom";
+import "./favoritos.css";
 
 function Favoritos() {
   const [receitas, setReceitas] = useState([]);
@@ -19,24 +20,27 @@ function Favoritos() {
   }
 
   return (
-    <div>
+    <div className="receitas">
       <h2>Suas Receitas</h2>
       {receitas.length === 0 && <span>Num tem receitas</span>}
-
       <ul>
         {receitas.map((item) => {
           return (
-            <li key={item.idMeal}>
-              <div className="receitas" key={item.idMeal}>
-                <h2>{item.strMeal}</h2>
-                <img src={item.strMealThumb} alt={item.strMeal} />
-                <p>{item.strInstructions}</p>
-                <Link to={`/detalhes/${item.idMeal}`}>Ver detalhes</Link>
-                <button onClick={() => excluirReceita(item.idMeal)}>
-                  Excluir Receita
-                </button>
-              </div>
-            </li>
+            <div>
+              <li key={item.idMeal}>
+                <div key={item.idMeal}>
+                  <h2>{item.strMeal}</h2>
+                  <img src={item.strMealThumb} alt={item.strMeal} />
+                  <p className="receitasParagrafos">{item.strInstructions}</p>
+                  <Link className="link" to={`/detalhes/${item.idMeal}`}>
+                    Ver detalhes
+                  </Link>
+                  <button onClick={() => excluirReceita(item.idMeal)}>
+                    Excluir Receita
+                  </button>
+                </div>
+              </li>
+            </div>
           );
         })}
       </ul>

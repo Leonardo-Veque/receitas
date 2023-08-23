@@ -1,0 +1,80 @@
+.receitas{
+    max-width: 1000px;
+    margin: 14px auto;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    box-shadow: 10px 5px 5px gray;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+.receitas img{
+    border-radius: 8px;
+    width: 300px;
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    
+   
+}
+.receitas ul{
+    list-style: none;
+}
+.receitas div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+}
+.receitas p{
+    font-size: 18px;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.receitas h2{
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+}
+.link{
+    font-size: 23px;
+    text-decoration: none;
+    border: solid 0.5px black;
+    width: 170px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #DDC8C4;
+    color: black;
+    margin-top: 10px;
+}
+.link:hover{
+    background-color: #EFF9F0;
+}
+
+button{
+    font-size: 18px;
+    width: 170px;
+    height: 30px;
+    border: solid 0.5px black;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: #DDC8C4;
+    border-radius: 8px;
+}
+button:hover{
+
+    background-color: #EFF9F0;
+}
+.receitas ul{ 
+    display: flex;
+    justify-content: center;
+}

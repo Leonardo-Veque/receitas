@@ -27,7 +27,9 @@ function Home() {
           <h2>{item.strMeal}</h2>
           <img src={item.strMealThumb} alt={item.strMeal} />
           <p>{item.strInstructions}</p>
-          <Link to={`/detalhes/${item.idMeal}`}>Ver detalhes</Link>
+          <Link className="link" to={`/detalhes/${item.idMeal}`}>
+            Ver detalhes
+          </Link>
         </div>
       ))}
     </div>

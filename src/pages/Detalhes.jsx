@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../services/api";
+import "./favoritos.css";
 
 function Detalhes() {
   const ingredientes = new Array(20).fill(0);
@@ -43,16 +44,17 @@ function Detalhes() {
   }
 
   return (
-    <div>
+    <div className="receitas">
       <h2>{receita.strMeal}</h2>
       <p>{receita.strInstructions}</p>
+      <img src={receita.strMealThumb} alt="" />
       <button onClick={salvarReceitas}>Salvar</button>
       {ingredientes.map((_v, i) => (
         <>
           <div key={`ingrediente_${i}`}>
-            <p>
+            <ul>
               {receita[`strIngredient${i + 1}`]} {receita[`strMeasure${i + 1}`]}
-            </p>
+            </ul>
           </div>
         </>
       ))}
