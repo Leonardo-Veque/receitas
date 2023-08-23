@@ -27,6 +27,14 @@ function Home() {
     console.log(JSON.parse(listAdd) || []);
   }, []);
 
+  const excluirRec = (id) => {
+    let filtrar = minhaRec.filter((item) => {
+      return item.id !== id;
+    });
+    SetMinhaRec(filtrar);
+    localStorage.setItem("receitaAdd", JSON.stringify(filtrar));
+  };
+
   const pegarIng = () => (
     <div>
       {receitas.map((item) => (
@@ -45,6 +53,7 @@ function Home() {
           <h2>{item.nome}</h2>
           <p>{item.instrucoes}</p>
           <ul>{item.ingrediente}</ul>
+          <button onClick={() => excluirRec(item.id)}>Excluir Receita</button>
         </div>
       ))}
     </div>

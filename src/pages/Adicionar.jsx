@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "./adicionar.css";
@@ -7,6 +8,7 @@ export const Adicionar = () => {
   const [nome, setNome] = useState("");
   const [instrucoes, setInstrucoes] = useState("");
   const [ingrediente, setIngrediente] = useState("");
+  const navigate = useNavigate();
   let id = uuidv4();
 
   const criar = (e) => {
@@ -18,6 +20,8 @@ export const Adicionar = () => {
     receitas.push(receita);
 
     localStorage.setItem("receitaAdd", JSON.stringify(receitas));
+
+    return navigate("/");
   };
 
   const getReceitas = () => {
